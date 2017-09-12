@@ -8,7 +8,7 @@ namespace SDMTDDAssignment.BLL
 {
     public class SortedBag : ISortedBag
     {
-        public void Add()
+        public void Add(int number)
         {
             throw new NotImplementedException();
         }
@@ -18,9 +18,6 @@ namespace SDMTDDAssignment.BLL
             throw new NotImplementedException();
         }
 
-        public int Count()
-        {
-            throw new NotImplementedException();
-        }
+        public int Count { get; }
     }
 }

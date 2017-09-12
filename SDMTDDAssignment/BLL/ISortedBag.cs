@@ -3,7 +3,7 @@
     public interface ISortedBag
     {
         // Add integer
-        void Add();
+        void Add(int numbers);
 
         // Retrieve and remove smallest integer
         int Pop();
