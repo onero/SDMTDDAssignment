@@ -9,6 +9,6 @@
         int Pop();
 
         // Retrieve the number of integers
-        int Count();
+        int Count { get; }
     }
 }
