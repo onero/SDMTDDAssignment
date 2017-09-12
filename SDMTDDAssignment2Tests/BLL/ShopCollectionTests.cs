@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -10,6 +11,8 @@ namespace SDMTDDAssignment2Tests.BLL
     [TestClass()]
     public class ShopCollectionTests
     {
+        private const string NonExistingIdString = "Id doesn't exist";
+        private const int NonExistingId = 999;
         private IShopCollection _shopCollection;
 
         private static readonly Shop MockShop = new Shop()
@@ -45,6 +48,14 @@ namespace SDMTDDAssignment2Tests.BLL
 
             Assert.AreEqual(createdShop, result);
         }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException), NonExistingIdString)]
+        public void ReadNonExistingShopTest()
+        {
+            _shopCollection.Read(NonExistingId);
+        }
+
         [TestMethod()]
         public void ReadAllTest()
         {
@@ -65,6 +76,13 @@ namespace SDMTDDAssignment2Tests.BLL
         }
 
         [TestMethod()]
+        [ExpectedException(typeof(ArgumentException), NonExistingIdString)]
+        public void UpdateNonExistingShopTest()
+        {
+            _shopCollection.Update(MockShop);
+        }
+
+        [TestMethod()]
         public void DeleteTest()
         {
             var createdShop = _shopCollection.Create(MockShop);
@@ -74,6 +92,13 @@ namespace SDMTDDAssignment2Tests.BLL
             var shops = _shopCollection.ReadAll();
 
             Assert.IsTrue(shops.Any() == false);
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentException), NonExistingIdString)]
+        public void DeleteNonExistingShopTest()
+        {
+            _shopCollection.Delete(NonExistingId);
         }
 
         [TestMethod()]
