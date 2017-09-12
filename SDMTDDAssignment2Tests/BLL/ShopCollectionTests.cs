@@ -45,6 +45,13 @@ namespace SDMTDDAssignment2Tests.BLL
 
             Assert.AreEqual(createdShop, result);
         }
+        [TestMethod()]
+        public void ReadAllTest()
+        {
+            var shops = _shopCollection.ReadAll();
+
+            Assert.IsNotNull(shops);
+        }
 
         [TestMethod()]
         public void UpdateTest()
