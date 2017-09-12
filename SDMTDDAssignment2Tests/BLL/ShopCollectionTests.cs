@@ -86,12 +86,12 @@ namespace SDMTDDAssignment2Tests.BLL
             // Expected result with closest shop first in list
             var expectedResult = new List<Shop>()
             {
-               firstShop,
-               secondShop
+                firstShop,
+                secondShop
             };
             // Actual result
             var result = _shopCollection.GetShopsSortedInDistance(latitude, longtitude).ToList();
-            
+
             Assert.AreEqual(expectedResult, result);
         }
 
