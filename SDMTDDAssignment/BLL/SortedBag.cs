@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace SDMTDDAssignment.BLL
 
         public int Pop()
         {
+            if (_bag.Count == 0) throw new ArgumentException("Unable to POP empty collection");
             // Get lowest number
             var lowestNumber = _bag.Min();
             // Remove it from bag
