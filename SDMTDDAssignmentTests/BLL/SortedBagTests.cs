@@ -1,12 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SDMTDDAssignment.BLL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SDMTDDAssignment.BLL.Tests {
+namespace SDMTDDAssignmentTests.BLL {
     [TestClass()]
     public class SortedBagTests {
         private ISortedBag _sortedBag;
@@ -21,7 +16,7 @@ namespace SDMTDDAssignment.BLL.Tests {
         public void AddTest() {
             _sortedBag.Add(5);
 
-            var expectedResult = 5;
+            var expectedResult = 1;
             var result = _sortedBag.Count;
 
             Assert.AreEqual(expectedResult, result);

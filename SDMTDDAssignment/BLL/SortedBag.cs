@@ -8,16 +8,28 @@ namespace SDMTDDAssignment.BLL
 {
     public class SortedBag : ISortedBag
     {
+        private readonly IList<int> _bag;
+
+        public SortedBag()
+        {
+            _bag = new List<int>();
+        }
+
         public void Add(int number)
         {
-            throw new NotImplementedException();
+            _bag.Add(number);
         }
 
         public int Pop()
         {
-            throw new NotImplementedException();
+            // Get lowest number
+            var lowestNumber = _bag.Min();
+            // Remove it from bag
+            _bag.Remove(lowestNumber);
+            // return number
+            return lowestNumber;
         }
 
-        public int Count { get; }
+        public int Count => _bag.Count;
     }
 }
