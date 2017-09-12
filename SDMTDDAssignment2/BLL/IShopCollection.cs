@@ -3,48 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SDMTDDAssignment2.BE;
 
 namespace SDMTDDAssignment2.BLL
 {
     public interface IShopCollection
     {
-        int Id { set; }
-        string Name { get; set; }
-        string Address { get; set; }
-        string WebsiteUrl { get; set; }
-        string Latitude { get; set; }
-        string Longitude { get; set; }
-
         /// <summary>
-        /// Creates a new shopCollection.
-        /// Returns the new shopCollection.
+        /// Creates a new shop
         /// </summary>
-        /// <param name="shopCollection"></param>
-        /// <returns></returns>
-        ShopCollection Create(ShopCollection shopCollection);
+        /// <param name="shop"></param>
+        /// <returns>Shop</returns>
+        Shop Create(Shop shop);
 
         /// <summary>
-        /// Returns the shopCollection with the parsed Id.
-        /// Should throw an exception if no shopCollection is found.
+        /// Read all shops
+        /// </summary>
+        /// <returns>Collection of shops</returns>
+        IEnumerable<Shop> ReadAll();
+
+        /// <summary>
+        /// Get Shop with parsed Id
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
-        ShopCollection Read(int id);
+        /// <returns>Shop with the parsed Id.</returns>
+        /// <remarks>Should throw an exception if the shopCollection is found.</remarks>
+        Shop Read(int id);
 
         /// <summary>
         /// Updates the shopCollection with the parsed id.
-        /// Should throw an exception if the shopCollection is found.
         /// </summary>
-        /// <param name="shopCollection"></param>
-        /// <returns></returns>
-        ShopCollection Update(ShopCollection shopCollection);
+        /// <param name="shop"></param>
+        /// <returns>IShopCollection</returns>
+        /// <remarks>Should throw an exception if the shopCollection is found.</remarks>
+        Shop Update(Shop shop);
 
         /// <summary>
         /// Deletes the shopCollection with the parsed id.
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>
-        ShopCollection Delete(int id);
+        /// <returns>True if deleted</returns>
+        bool Delete(int id);
 
         /// <summary>
         /// Returns an IEnumerable with all shopCollection sorted in distance from the parsed GPS-coordinate.
@@ -52,8 +51,8 @@ namespace SDMTDDAssignment2.BLL
         /// </summary>
         /// <param name="latitude"></param>
         /// <param name="longitude"></param>
-        /// <returns></returns>
-        IEnumerable<ShopCollection> GetShopsSortedInDistance(string latitude, string longitude);
+        /// <returns>Collection of IShopCollection</returns>
+        IEnumerable<IShopCollection> GetShopsSortedInDistance(int latitude, int longitude);
 
         /// <summary>
         /// Returns an IEnumerable with all shopCollections located within a rectangle of the two parsed GPS-coordinates.
@@ -62,8 +61,8 @@ namespace SDMTDDAssignment2.BLL
         /// <param name="firstLongitude"></param>
         /// <param name="secondLatitude"></param>
         /// <param name="secondLongitude"></param>
-        /// <returns></returns>
-        IEnumerable<ShopCollection> GetShopsInSpecifiedArea(string firstLatitude, string firstLongitude,
-            string secondLatitude, string secondLongitude);
+        /// <returns>Collection of IShopCollection</returns>
+        IEnumerable<IShopCollection> GetShopsInSpecifiedArea(int firstLatitude, int firstLongitude,
+            int secondLatitude, int secondLongitude);
     }
 }

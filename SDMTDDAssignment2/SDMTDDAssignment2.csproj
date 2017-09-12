@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BE\Shop.cs" />
     <Compile Include="BLL\IShopCollection.cs" />
     <Compile Include="BLL\ShopCollection.cs" />
     <Compile Include="Program.cs" />

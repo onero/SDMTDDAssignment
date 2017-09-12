@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDMTDDAssignmentTests", "SD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDMTDDAssignment2", "SDMTDDAssignment2\SDMTDDAssignment2.csproj", "{50E22F9A-052B-42E1-94DF-467A1D5456B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDMTDDAssignment2Tests", "SDMTDDAssignment2Tests\SDMTDDAssignment2Tests.csproj", "{42820C08-F3A4-46D2-828D-EFE22F88431F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{50E22F9A-052B-42E1-94DF-467A1D5456B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50E22F9A-052B-42E1-94DF-467A1D5456B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50E22F9A-052B-42E1-94DF-467A1D5456B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42820C08-F3A4-46D2-828D-EFE22F88431F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42820C08-F3A4-46D2-828D-EFE22F88431F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42820C08-F3A4-46D2-828D-EFE22F88431F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42820C08-F3A4-46D2-828D-EFE22F88431F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

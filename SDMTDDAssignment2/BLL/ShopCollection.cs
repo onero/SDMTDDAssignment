@@ -3,45 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SDMTDDAssignment2.BE;
 
 namespace SDMTDDAssignment2.BLL
 {
     public class ShopCollection : IShopCollection
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Address { get; set; }
-        public string WebsiteUrl { get; set; }
-        public string Latitude { get; set; }
-        public string Longitude { get; set; }
-
-        public ShopCollection Create(ShopCollection shopCollection)
+        public Shop Create(Shop shop)
         {
             throw new NotImplementedException();
         }
 
-        public ShopCollection Read(int id)
+        public IEnumerable<Shop> ReadAll()
         {
             throw new NotImplementedException();
         }
 
-        public ShopCollection Update(ShopCollection shopCollection)
+        public Shop Read(int id)
         {
             throw new NotImplementedException();
         }
 
-        public ShopCollection Delete(int id)
+        public Shop Update(Shop shop)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ShopCollection> GetShopsSortedInDistance(string latitude, string longitude)
+        public bool Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ShopCollection> GetShopsInSpecifiedArea(string firstLatitude, string firstLongitude, string secondLatitude,
-            string secondLongitude)
+        public IEnumerable<IShopCollection> GetShopsSortedInDistance(int latitude, int longitude)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<IShopCollection> GetShopsInSpecifiedArea(int firstLatitude, int firstLongitude, int secondLatitude, int secondLongitude)
         {
             throw new NotImplementedException();
         }
