@@ -9,29 +9,43 @@ namespace SDMTDDAssignment2.BLL
 {
     public class ShopCollection : IShopCollection
     {
+        private List<Shop> _shops;
+
+        public ShopCollection()
+        {
+            _shops = new List<Shop>();
+        }
+
         public Shop Create(Shop shop)
         {
-            throw new NotImplementedException();
+            _shops.Add(shop);
+            return shop;
         }
 
         public IEnumerable<Shop> ReadAll()
         {
-            throw new NotImplementedException();
+            return _shops;
         }
 
         public Shop Read(int id)
         {
-            throw new NotImplementedException();
+            return _shops.FirstOrDefault(s => s.Id == id);
         }
 
         public Shop Update(Shop shop)
         {
-            throw new NotImplementedException();
+            var shopToEdit = Read(shop.Id);
+            shopToEdit.Address = shop.Address;
+            shopToEdit.Name = shop.Name;
+            shopToEdit.WebsiteUrl = shop.WebsiteUrl;
+            shopToEdit.Latitude = shop.Latitude;
+            shopToEdit.Longtitude = shop.Longtitude;
+            return shopToEdit;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return _shops.Remove(Read(id));
         }
 
         public IEnumerable<IShopCollection> GetShopsSortedInDistance(int latitude, int longitude)
