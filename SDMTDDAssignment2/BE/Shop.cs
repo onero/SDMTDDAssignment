@@ -9,6 +9,6 @@
         public int Latitude { get; set; }
         public int Longtitude { get; set; }
 
-        public string Gps => $"{Longtitude}.{Latitude}";
+        public string Gps => $"{Latitude}.{Longtitude}";
     }
 }

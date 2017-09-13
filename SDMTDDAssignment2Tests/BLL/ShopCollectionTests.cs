@@ -105,11 +105,18 @@ namespace SDMTDDAssignment2Tests.BLL
         public void GetShopsSortedInDistanceTest()
         {
             // Create mockshop
-            var firstShop = _shopCollection.Create(MockShop);
+            var firstShop = MockShop;
 
             // Create secondshop, with modified longtitude
-            var secondShop = MockShop;
-            secondShop.Longtitude = 2;
+            var secondShop = new Shop()
+            {
+                Id = 2,
+                Name = "Test",
+                Address = "Secret",
+                Latitude = 1,
+                Longtitude = 2,
+                WebsiteUrl = "www.test.com"
+            };
             _shopCollection.Create(secondShop);
 
             // Create coordinate to check against
