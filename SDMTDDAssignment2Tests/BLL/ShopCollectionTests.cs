@@ -106,6 +106,7 @@ namespace SDMTDDAssignment2Tests.BLL
         {
             // Create mockshop
             var firstShop = MockShop;
+            _shopCollection.Create(firstShop);
 
             // Create secondshop, with modified longtitude
             var secondShop = new Shop()
@@ -131,7 +132,9 @@ namespace SDMTDDAssignment2Tests.BLL
             // Actual result
             var result = _shopCollection.GetShopsSortedInDistance(latitude, longtitude).ToList();
 
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult[0], result[0]);
+            Assert.AreEqual(expectedResult[1], result[1]);
+            
         }
 
         [TestMethod()]
@@ -159,9 +162,9 @@ namespace SDMTDDAssignment2Tests.BLL
                 firstShop
             };
             // Actual result
-            var result = _shopCollection.GetShopsInSpecifiedArea(startLatitude, startLongtitude, endLatitude, endLongtitude);
+            var result = _shopCollection.GetShopsInSpecifiedArea(startLatitude, startLongtitude, endLatitude, endLongtitude).ToList();
 
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(expectedResult[0], result[0]);
         }
     }
 }

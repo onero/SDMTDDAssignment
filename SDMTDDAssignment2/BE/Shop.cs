@@ -1,4 +1,6 @@
-﻿namespace SDMTDDAssignment2.BE
+﻿using System;
+
+namespace SDMTDDAssignment2.BE
 {
     public class Shop
     {
