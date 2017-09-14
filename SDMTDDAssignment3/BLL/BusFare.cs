@@ -1,12 +1,9 @@
-﻿namespace SDMTDDAssignment3.BLL
+﻿using static SDMTDDAssignment3.BLL.BusFees;
+
+namespace SDMTDDAssignment3.BLL
 {
     public class BusFare : IBusFare
     {
-        private const double InitialFee = 130.0;
-        private const double Below100Fee = 3.20;
-        private const double Above100Below500LessThan12PassengersFee = 2.75;
-        private const double Above100Below500_12OrMorePassengersFee = 3.00;
-        private const double Above500Fee = 2.25;
 
         private const int HundredDistance = 99;
         private const int FiveHundredDistance = 499;

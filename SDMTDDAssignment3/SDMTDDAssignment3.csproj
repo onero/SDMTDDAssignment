@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\BusFare.cs" />
+    <Compile Include="BLL\BusFees.cs" />
     <Compile Include="BLL\IBusFare.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
