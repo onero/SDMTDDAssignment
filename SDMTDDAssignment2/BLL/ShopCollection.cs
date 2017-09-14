@@ -45,7 +45,7 @@ namespace SDMTDDAssignment2.BLL
             return shopToEdit;
         }
 
-        public IEnumerable<Shop> GetShopsSortedInDistance(int targetLatitude, int targetLongitude)
+        public IEnumerable<Shop> GetShopsSortedInDistance(double targetLatitude, double targetLongitude)
         {
             var shopsAndTheirDistanceFromTarget = new Dictionary<Shop, double>();
 
@@ -82,22 +82,22 @@ namespace SDMTDDAssignment2.BLL
 
             var shopsInSpecifiedArea = new List<Shop>();
 
-            foreach (var shop in _shops)
-            {
-                var latitude = shop.Latitude;
-                var longitude = shop.Longtitude;
-                var distanceToFirstCorner =
-                    FindDistanceBetweenTwoCoordinates(firstLatitude, firstLongitude, latitude, longitude);
-                var distanceToSecondCorner =
-                    FindDistanceBetweenTwoCoordinates(secondLatitude, secondLongitude, latitude, longitude);
-                if (distanceToFirstCorner <= width 
-                            && distanceToFirstCorner <= length 
-                            && distanceToSecondCorner <= width 
-                            && distanceToSecondCorner <= length)
-                {
-                    shopsInSpecifiedArea.Add(shop);
-                }
-            }
+            //foreach (var shop in _shops)
+            //{
+            //    var latitude = shop.Latitude;
+            //    var longitude = shop.Longtitude;
+            //    var distanceToFirstCorner =
+            //        FindDistanceBetweenTwoCoordinates(firstLatitude, firstLongitude, latitude, longitude);
+            //    var distanceToSecondCorner =
+            //        FindDistanceBetweenTwoCoordinates(secondLatitude, secondLongitude, latitude, longitude);
+            //    if (distanceToFirstCorner <= width 
+            //                && distanceToFirstCorner <= length 
+            //                && distanceToSecondCorner <= width 
+            //                && distanceToSecondCorner <= length)
+            //    {
+            //        shopsInSpecifiedArea.Add(shop);
+            //    }
+            //}
 
             return shopsInSpecifiedArea;
         }
@@ -110,7 +110,7 @@ namespace SDMTDDAssignment2.BLL
         /// <param name="x2">Longittude B</param>
         /// <param name="y2">Longittude B</param>
         /// <returns>distance between two coordinates as a double</returns>
-        private double FindDistanceBetweenTwoCoordinates(int x1, int y1, int x2, int y2)
+        private double FindDistanceBetweenTwoCoordinates(double x1, double y1, double x2, double y2)
         {
             var xPow = Math.Pow(x2 - x1, 2);
             var yPow = Math.Pow(y2 - y1, 2);
