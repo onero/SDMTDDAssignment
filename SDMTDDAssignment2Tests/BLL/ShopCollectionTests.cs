@@ -15,14 +15,14 @@ namespace SDMTDDAssignment2Tests.BLL
         private const int NonExistingId = 999;
         private IShopCollection _shopCollection;
 
-        private static readonly Shop MockShop = new Shop()
+        private static readonly Shop Broen = new Shop()
         {
             Id = 1,
             Name = "Broen",
             Address = "Exnersgade 20, 6700 Esbjerg",
             Longtitude = 55.465522,
             Latitude = 8.457322,
-            WebsiteUrl = "www.broen.org"
+            WebsiteUrl = "http://broenshopping.dk/"
         };
 
         [TestInitialize]
@@ -34,7 +34,7 @@ namespace SDMTDDAssignment2Tests.BLL
         [TestMethod()]
         public void CreateTest()
         {
-            var createdShop = _shopCollection.Create(MockShop);
+            var createdShop = _shopCollection.Create(Broen);
 
             Assert.IsNotNull(createdShop);
         }
@@ -42,7 +42,7 @@ namespace SDMTDDAssignment2Tests.BLL
         [TestMethod()]
         public void ReadTest()
         {
-            var createdShop = _shopCollection.Create(MockShop);
+            var createdShop = _shopCollection.Create(Broen);
 
             var result = _shopCollection.Read(createdShop.Id);
 
@@ -67,7 +67,7 @@ namespace SDMTDDAssignment2Tests.BLL
         [TestMethod()]
         public void UpdateTest()
         {
-            var createdShop = _shopCollection.Create(MockShop);
+            var createdShop = _shopCollection.Create(Broen);
             createdShop.Name = "Awesome shop!";
 
             var updatedShop = _shopCollection.Update(createdShop);
@@ -79,13 +79,13 @@ namespace SDMTDDAssignment2Tests.BLL
         [ExpectedException(typeof(ArgumentException), NonExistingIdString)]
         public void UpdateNonExistingShopTest()
         {
-            _shopCollection.Update(MockShop);
+            _shopCollection.Update(Broen);
         }
 
         [TestMethod()]
         public void DeleteTest()
         {
-            var createdShop = _shopCollection.Create(MockShop);
+            var createdShop = _shopCollection.Create(Broen);
 
             var deleted = _shopCollection.Delete(createdShop.Id);
 
@@ -105,7 +105,7 @@ namespace SDMTDDAssignment2Tests.BLL
         public void GetShopsSortedInDistanceTest()
         {
             // Create mockshop
-            var broen = MockShop;
+            var broen = Broen;
             _shopCollection.Create(broen);
 
             // Create secondshop, with modified longtitude
@@ -116,7 +116,7 @@ namespace SDMTDDAssignment2Tests.BLL
                 Address = "Stormgade 206 6700 Esbjerg",
                 Latitude = 55.487224,
                 Longtitude = 8.449184,
-                WebsiteUrl = "www.7-eleven.com"
+                WebsiteUrl = "http://www.7-eleven.dk/"
             };
             _shopCollection.Create(sevenEleven);
 
@@ -140,10 +140,10 @@ namespace SDMTDDAssignment2Tests.BLL
         public void GetShopsInSpecifiedAreaTest()
         {
             // Create mockshop
-            var firstShop = _shopCollection.Create(MockShop);
+            var firstShop = _shopCollection.Create(Broen);
 
             // Create secondshop, with modified longtitude
-            var secondShop = MockShop;
+            var secondShop = Broen;
             secondShop.Longtitude = 2;
             _shopCollection.Create(secondShop);
 
