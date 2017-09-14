@@ -18,7 +18,7 @@ namespace SDMTDDAssignment3Tests.BLL
         private IBusFare _bus;
 
         [TestInitialize]
-        private void Initialize()
+        public void Initialize()
         {
             _bus = new BusFare();
         }
@@ -39,7 +39,7 @@ namespace SDMTDDAssignment3Tests.BLL
 
         //Anything below 100 km, 3.20,- pr km regardsless of passengers.
         [TestMethod()]
-        public void TotalCost_Below100Travled_DistanceTimeBelow100Fee()
+        public void TotalCost_Below100Travelled_DistanceTimeBelow100Fee()
         {
             var noOfPassengers = 13;
             var distance = 50;
