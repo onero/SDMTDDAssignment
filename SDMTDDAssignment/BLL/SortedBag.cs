@@ -21,6 +21,11 @@ namespace SDMTDDAssignment.BLL
             _bag.Add(number);
         }
 
+        public IList<int> GetBag()
+        {
+            return new List<int>(_bag);
+        }
+
         public int Pop()
         {
             if (_bag.Count == 0) throw new ArgumentException("Unable to POP empty collection");

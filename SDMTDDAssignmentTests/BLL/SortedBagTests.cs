@@ -17,7 +17,7 @@ namespace SDMTDDAssignmentTests.BLL
         }
 
         [TestMethod()]
-        public void AddTest()
+        public void BagIsIncreasedTest()
         {
             _sortedBag.Add(5);
 
@@ -25,6 +25,17 @@ namespace SDMTDDAssignmentTests.BLL
             var result = _sortedBag.Count;
 
             Assert.AreEqual(expectedResult, result);
+        }
+
+        [TestMethod()]
+        public void NumberIsAddedTest()
+        {
+            var numberToAdd = 5;
+            _sortedBag.Add(numberToAdd);
+            
+            var result = _sortedBag.GetBag()[0];
+
+            Assert.AreEqual(numberToAdd, result);
         }
 
         [TestMethod()]
