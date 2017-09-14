@@ -4,7 +4,6 @@ namespace SDMTDDAssignment3.BLL
 {
     public class BusFare : IBusFare
     {
-
         private const int HundredDistance = 99;
         private const int FiveHundredDistance = 499;
 
@@ -29,13 +28,12 @@ namespace SDMTDDAssignment3.BLL
                     var belowHundredCost = HundredDistance * Below100Fee;
                     var above100Below500Less12PassengersCost = above100Distance * Above100Below500LessThan12PassengersFee;
                     return belowHundredCost + above100Below500Less12PassengersCost + InitialFee;
-
                 }
                 else
                 {
                     var above100Distance = kilometer - HundredDistance;
                     var belowHundredCost = (HundredDistance * Below100Fee);
-                    var above100Below500_12OrMorePassengersCost = (above100Distance * Above100Below500_12OrMorePassengersFee);
+                    var above100Below500_12OrMorePassengersCost = (above100Distance * Above100Below50012OrMorePassengersFee);
 
                     return belowHundredCost + above100Below500_12OrMorePassengersCost + InitialFee;
                 }
@@ -59,7 +57,7 @@ namespace SDMTDDAssignment3.BLL
                     var above100Below500Distance = kilometer - above500Distance - HundredDistance;
 
                     var above500Cost = above500Distance * Above500Fee;
-                    var above100Below500Cost = above100Below500Distance * Above100Below500_12OrMorePassengersFee;
+                    var above100Below500Cost = above100Below500Distance * Above100Below50012OrMorePassengersFee;
                     var hundredCost = HundredDistance * Below100Fee;
 
                     return above500Cost + above100Below500Cost + hundredCost + InitialFee;
