@@ -18,11 +18,11 @@ namespace SDMTDDAssignment2Tests.BLL
         private static readonly Shop MockShop = new Shop()
         {
             Id = 1,
-            Name = "De4FlotteFyre",
-            Address = "Home",
-            Longtitude = 1,
-            Latitude = 1,
-            WebsiteUrl = "www.de4flottefyre.org"
+            Name = "Broen",
+            Address = "Exnersgade 20, 6700 Esbjerg",
+            Longtitude = 55.465522,
+            Latitude = 8.457322,
+            WebsiteUrl = "www.broen.org"
         };
 
         [TestInitialize]
@@ -87,11 +87,11 @@ namespace SDMTDDAssignment2Tests.BLL
         {
             var createdShop = _shopCollection.Create(MockShop);
 
-            _shopCollection.Delete(createdShop.Id);
+            var deleted = _shopCollection.Delete(createdShop.Id);
 
-            var shops = _shopCollection.ReadAll();
+            //var shops = _shopCollection.ReadAll();
 
-            Assert.IsTrue(shops.Any() == false);
+            Assert.IsTrue(deleted);
         }
 
         [TestMethod()]
@@ -105,35 +105,34 @@ namespace SDMTDDAssignment2Tests.BLL
         public void GetShopsSortedInDistanceTest()
         {
             // Create mockshop
-            var firstShop = MockShop;
-            _shopCollection.Create(firstShop);
+            var broen = MockShop;
+            _shopCollection.Create(broen);
 
             // Create secondshop, with modified longtitude
-            var secondShop = new Shop()
+            var sevenEleven = new Shop()
             {
                 Id = 2,
-                Name = "Test",
-                Address = "Secret",
-                Latitude = 1,
-                Longtitude = 2,
-                WebsiteUrl = "www.test.com"
+                Name = "Shell/7-Eleven Esbjerg",
+                Address = "Stormgade 206 6700 Esbjerg",
+                Latitude = 55.487224,
+                Longtitude = 8.449184,
+                WebsiteUrl = "www.7-eleven.com"
             };
-            _shopCollection.Create(secondShop);
+            _shopCollection.Create(sevenEleven);
 
-            // Create coordinate to check against
-            const int latitude = 0;
-            const int longtitude = 0;
+            // Check against EASV address
+            const double latitude = 55.48573500000001;
+            const double longtitude = 8.456728999999996;
             // Expected result with closest shop first in list
             var expectedResult = new List<Shop>()
             {
-                firstShop,
-                secondShop
+                sevenEleven,
+                broen
             };
             // Actual result
             var result = _shopCollection.GetShopsSortedInDistance(latitude, longtitude).ToList();
 
             Assert.AreEqual(expectedResult[0], result[0]);
-            Assert.AreEqual(expectedResult[1], result[1]);
             
         }
 

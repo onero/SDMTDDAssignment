@@ -8,8 +8,8 @@ namespace SDMTDDAssignment2.BE
         public string Name { get; set; }
         public string Address { get; set; }
         public string WebsiteUrl { get; set; }
-        public int Latitude { get; set; }
-        public int Longtitude { get; set; }
+        public double Latitude { get; set; }
+        public double Longtitude { get; set; }
 
         public string Gps => $"{Latitude}.{Longtitude}";
     }
