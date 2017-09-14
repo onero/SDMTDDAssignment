@@ -106,6 +106,7 @@ namespace SDMTDDAssignment2Tests.BLL
         {
             // Create mockshop
             var broen = Broen;
+            _shopCollection.Create(broen);
 
             // Create secondshop, with modified longtitude
             var sevenEleven = new Shop()
@@ -118,7 +119,6 @@ namespace SDMTDDAssignment2Tests.BLL
                 WebsiteUrl = "http://www.7-eleven.dk/"
             };
             _shopCollection.Create(sevenEleven);
-            _shopCollection.Create(broen);
 
             // Check against EASV address
             const double latitude = 55.48573500000001;
