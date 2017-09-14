@@ -31,7 +31,7 @@ namespace SDMTDDAssignment2.BLL
         Shop Read(int id);
 
         /// <summary>
-        /// Updates the shopCollection with the parsed id.
+        /// Updates the shop with the parsed id.
         /// </summary>
         /// <param name="shop"></param>
         /// <returns>IShopCollection</returns>
@@ -39,14 +39,14 @@ namespace SDMTDDAssignment2.BLL
         Shop Update(Shop shop);
 
         /// <summary>
-        /// Deletes the shopCollection with the parsed id.
+        /// Deletes the shop with the parsed id.
         /// </summary>
         /// <param name="id"></param>
         /// <returns>True if deleted</returns>
         bool Delete(int id);
 
         /// <summary>
-        /// Returns an IEnumerable with all shopCollection sorted in distance from the parsed GPS-coordinate.
+        /// Returns an IEnumerable with all shops sorted in distance from the parsed GPS-coordinate.
         /// The one closest should be first in the IEnumerable.
         /// </summary>
         /// <param name="targetLatitude"></param>
@@ -55,7 +55,7 @@ namespace SDMTDDAssignment2.BLL
         IEnumerable<Shop> GetShopsSortedInDistance(int targetLatitude, int targetLongitude);
 
         /// <summary>
-        /// Returns an IEnumerable with all shopCollections located within a rectangle of the two parsed GPS-coordinates.
+        /// Returns an IEnumerable with all shops located within a rectangle of the two parsed GPS-coordinates.
         /// </summary>
         /// <param name="firstLatitude"></param>
         /// <param name="firstLongitude"></param>
