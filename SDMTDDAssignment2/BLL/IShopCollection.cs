@@ -52,7 +52,7 @@ namespace SDMTDDAssignment2.BLL
         /// <param name="targetLatitude"></param>
         /// <param name="targetLongitude"></param>
         /// <returns>Collection of IShopCollection</returns>
-        IEnumerable<Shop> GetShopsSortedInDistance(int targetLatitude, int targetLongitude);
+        IEnumerable<Shop> GetShopsSortedInDistance(double targetLatitude, double targetLongitude);
 
         /// <summary>
         /// Returns an IEnumerable with all shops located within a rectangle of the two parsed GPS-coordinates.
