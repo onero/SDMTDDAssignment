@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDMTDDAssignment", "SDMTDDAssignment\SDMTDDAssignment.csproj", "{676FEA13-B278-463C-B494-728D25C26A3A}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDMTDDAssignment2", "SDMTDDAssignment2\SDMTDDAssignment2.csproj", "{50E22F9A-052B-42E1-94DF-467A1D5456B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDMTDDAssignment2Tests", "SDMTDDAssignment2Tests\SDMTDDAssignment2Tests.csproj", "{42820C08-F3A4-46D2-828D-EFE22F88431F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDMTDDAssignment3", "SDMTDDAssignment3\SDMTDDAssignment3.csproj", "{5431D3EA-5BE8-4BAA-BFDF-2C39ADF6C00B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SDMTDDAssignment3Tests", "SDMTDDAssignment3Tests\SDMTDDAssignment3Tests.csproj", "{5AD01FD5-5B17-4B02-9459-4A6C6AE77403}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{42820C08-F3A4-46D2-828D-EFE22F88431F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42820C08-F3A4-46D2-828D-EFE22F88431F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42820C08-F3A4-46D2-828D-EFE22F88431F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5431D3EA-5BE8-4BAA-BFDF-2C39ADF6C00B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5431D3EA-5BE8-4BAA-BFDF-2C39ADF6C00B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5431D3EA-5BE8-4BAA-BFDF-2C39ADF6C00B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5431D3EA-5BE8-4BAA-BFDF-2C39ADF6C00B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AD01FD5-5B17-4B02-9459-4A6C6AE77403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AD01FD5-5B17-4B02-9459-4A6C6AE77403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AD01FD5-5B17-4B02-9459-4A6C6AE77403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AD01FD5-5B17-4B02-9459-4A6C6AE77403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
