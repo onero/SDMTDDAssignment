@@ -49,10 +49,10 @@ namespace SDMTDDAssignment2.BLL
         /// Returns an IEnumerable with all shopCollection sorted in distance from the parsed GPS-coordinate.
         /// The one closest should be first in the IEnumerable.
         /// </summary>
-        /// <param name="latitude"></param>
-        /// <param name="longitude"></param>
+        /// <param name="targetLatitude"></param>
+        /// <param name="targetLongitude"></param>
         /// <returns>Collection of IShopCollection</returns>
-        IEnumerable<Shop> GetShopsSortedInDistance(int latitude, int longitude);
+        IEnumerable<Shop> GetShopsSortedInDistance(int targetLatitude, int targetLongitude);
 
         /// <summary>
         /// Returns an IEnumerable with all shopCollections located within a rectangle of the two parsed GPS-coordinates.

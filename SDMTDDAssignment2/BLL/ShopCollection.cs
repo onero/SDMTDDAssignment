@@ -45,14 +45,14 @@ namespace SDMTDDAssignment2.BLL
             return shopToEdit;
         }
 
-        public IEnumerable<Shop> GetShopsSortedInDistance(int latitude, int longitude)
+        public IEnumerable<Shop> GetShopsSortedInDistance(int targetLatitude, int targetLongitude)
         {
             var shopsAndTheirDistanceFromTarget = new Dictionary<Shop, double>();
 
             foreach (var shop in _shops)
             {
                 var distanceFromTarget =
-                    FindDistanceBetweenTwoCoordinates(latitude, longitude, shop.Latitude, shop.Longtitude);
+                    FindDistanceBetweenTwoCoordinates(targetLatitude, targetLongitude, shop.Latitude, shop.Longtitude);
                 shopsAndTheirDistanceFromTarget.Add(shop, distanceFromTarget);
             }
 
@@ -105,11 +105,11 @@ namespace SDMTDDAssignment2.BLL
         /// <summary>
         /// Finds the distance between the two objects by using the mathematical distanceFormula |AB| = sqrt((x2-x1)^2+(y2-y1)^2).
         /// </summary>
-        /// <param name="x1"></param>
-        /// <param name="y1"></param>
-        /// <param name="x2"></param>
-        /// <param name="y2"></param>
-        /// <returns></returns>
+        /// <param name="x1">Latitude A</param>
+        /// <param name="y1">Longittude A</param>
+        /// <param name="x2">Longittude B</param>
+        /// <param name="y2">Longittude B</param>
+        /// <returns>distance between two coordinates as a double</returns>
         private double FindDistanceBetweenTwoCoordinates(int x1, int y1, int x2, int y2)
         {
             var xPow = Math.Pow(x2 - x1, 2);
